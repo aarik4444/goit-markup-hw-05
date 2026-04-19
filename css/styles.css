@@ -777,14 +777,12 @@ position: relative;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
+    
     display: flex;
-        align-items: center;
-        gap: 8px;
+    align-items: center;
 }
 
 .modal-check-icon {
-    /* Делаем иконку полностью прозрачной */
-    fill: transparent; 
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -795,23 +793,26 @@ position: relative;
 .modal-check-box {
     width: 16px;
     height: 16px;
-
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    
-
-    border-radius: 2px;
-    border: 1px solid rgba(46, 47, 66, 0.4);
-
     fill: transparent;
-
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Щоб квадратик не стискався при перенесенні тексту */
+    flex-shrink: 0; 
+    margin-right: 8px; /* Відступ від тексту */
+    
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+                border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+                fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+modal-check-text {
+
+}
 
 .modal-check-input:checked+.modal-check-label .modal-check-box {
     background-color: #404bbf;
